@@ -10,7 +10,7 @@ export default {
   head: {
     title: 'yukilog',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'ja',
     },
     meta: [
       { charset: 'utf-8' },
@@ -21,7 +21,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['ress', '~/assets/scss/_base.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -35,10 +35,11 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/style-resources',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['nuxt-webfontloader'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -52,19 +53,29 @@ export default {
     },
   },
 
+  styleResources: {
+    scss: ['~/assets/scss/style.scss'],
+  },
+
+  webfontloader: {
+    google: {
+      families: ['Playfair+Display+SC:400,700'],
+    },
+  },
+
   generate: {
     async routes() {
       const pages = await axios
         .get('https://yukilog.microcms.io/api/v1/blog?limit=100', {
-          headers: { 'X-API-KEY': '19ddd70a-0f27-4dca-a4f4-96f250654688' }
+          headers: { 'X-API-KEY': '19ddd70a-0f27-4dca-a4f4-96f250654688' },
         })
         .then((res) =>
           res.data.contents.map((content) => ({
             route: `/${content.id}`,
-            payload: content
+            payload: content,
           }))
         )
       return pages
-    }
-  }
+    },
+  },
 }

@@ -1,0 +1,136 @@
+/* variables */
+
+// ---------------------------------------------
+// カラーチップ
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+$COLOR_CHIP_1: #fff;
+$COLOR_CHIP_2: #000;
+$COLOR_CHIP_3: #111;
+$COLOR_CHIP_4: #D0D0D0;
+
+// ---------------------------------------------
+// base-color
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+$BASE_COLOR: $COLOR_CHIP_3;
+
+// ---------------------------------------------
+// main-color
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+$MAIN_COLOR: $COLOR_CHIP_1;
+
+// ---------------------------------------------
+// accent-color
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+$ACCENT_COLOR: $COLOR_CHIP_4;
+
+// ---------------------------------------------
+// background-color
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+$BACKGROUND_COLOR: $COLOR_CHIP_3;
+$BACKGROUND_COLOR_2: $COLOR_CHIP_4;
+
+// ---------------------------------------------
+// border-color
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+$BORDER_COLOR: $COLOR_CHIP_1;
+$BORDER_COLOR_2: $COLOR_CHIP_3;
+$BORDER_COLOR_3: $COLOR_CHIP_4;
+
+// ---------------------------------------------
+// color（text Color）
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+$TEXT_COLOR: $COLOR_CHIP_1;
+$TEXT_COLOR_2: $COLOR_CHIP_3;
+$TEXT_COLOR_3: $COLOR_CHIP_4;
+
+// ---------------------------------------------
+// box-shadow
+// ---------------------------------------------
+// 【この変数はデザイナーと相談のうえ設定しています】
+// メインデザイナーの許可なく追加・削除・変更することを禁止します
+
+// $SHADOW_COLOR: $COLOR_CHIP_2;
+// $BOX-SHADOW: 0 0 4px rgba($SHADOW_COLOR, 0.2);
+
+// ---------------------------------------------
+// メディアクエリ関係
+// ---------------------------------------------
+//ブレークポイント
+$breakpoints: (
+  "xs": (min-width: 0),
+  "sm": (min-width: 34em), //576px
+  "md": (min-width: 48em), //768px
+  "lg": (min-width: 75em), //1200px
+  "xl": (min-width: 90em)  //1440px
+) !default;
+
+//ビューポート
+$DESIGN_SP_VIEWPORT: 375; // PSDでのSPのviewport設定
+$DESIGN_TABLET_VIEWPORT: 768; // PSDでのTABLETのviewport設定
+$DESIGN_PC_VIEWPORT: 1440; // PSDでのPCのviewport設定
+
+// ---------------------------------------------
+// イージングの定義
+// ---------------------------------------------
+$easings: (
+  // sine
+  in-sine: cubic-bezier(.47, 0, .745, .715),
+  out-sine: cubic-bezier(.39, .575, .565, 1),
+  in-out-sine: cubic-bezier(.445, .05, .55, .95),
+
+  // quad
+  in-quad: cubic-bezier(.55, .085, .68, .53),
+  out-quad: cubic-bezier(.25, .46, .45, .94),
+  in-out-quad: cubic-bezier(.455, .03, .515, .955),
+
+  // cubic
+  in-cubic: cubic-bezier(.55, .055, .675, .19),
+  out-cubic: cubic-bezier(.215, .61, .355, 1),
+  in-out-cubic: cubic-bezier(.645, .045, .355, 1),
+
+  // quart
+  in-quart: cubic-bezier(.895, .03, .685, .22),
+  out-quart: cubic-bezier(.165, .84, .44, 1),
+  in-out-quart: cubic-bezier(.77, 0, .175, 1),
+
+  // quint
+  in-quint: cubic-bezier(.755, .05, .855, .06),
+  out-quint: cubic-bezier(.23, 1, .32, 1),
+  in-out-quint: cubic-bezier(.86, 0, .07, 1),
+
+  // expo
+  in-expo: cubic-bezier(.95, .05, .795, .035),
+  out-expo: cubic-bezier(.19, 1, .22, 1),
+  in-out-expo: cubic-bezier(1, 0, 0, 1),
+
+  // circ
+  in-circ: cubic-bezier(.6, .04, .98, .335),
+  out-circ: cubic-bezier(.075, .82, .165, 1),
+  in-out-circ: cubic-bezier(.785, .135, .15, .86),
+
+  // back
+  in-back: cubic-bezier(.6, -.28, .735, .045),
+  out-back: cubic-bezier(.175, .885, .32, 1.275),
+  in-out-back: cubic-bezier(.68, -.55, .265, 1.55)
+) !default;

@@ -1,0 +1,86 @@
+/* base */
+
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+  text-shadow: none;
+}
+
+html, body {
+  width: 100%;
+}
+
+html {
+  &.drawerOpen {
+    overflow: hidden;
+  }
+}
+
+body {
+  background-color: $BACKGROUND_COLOR_2;
+  color: $TEXT_COLOR_2;
+  font-family: 'Playfair Display SC',
+    "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+  letter-spacing: .08em;
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+}
+
+body.preload * {
+  transition: none !important;
+}
+
+a {
+  color: $TEXT_COLOR_2;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: top;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+input,
+button,
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+}
+
+label,
+button,
+select {
+  cursor: pointer;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}

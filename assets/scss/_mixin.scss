@@ -1,0 +1,128 @@
+/* mixin */
+
+// =============================================
+// [responsive レスポンシブ(メディアクエリ)の指定]
+// $breakpoint {String} ブレークポイントの値
+// =============================================
+@mixin responsive($breakpoint) {
+  @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+    @content;
+  }
+}
+
+// =============================================
+// [hover ホバーの指定]
+// $ie {Boolean} IEに対応させるかorさせないか
+// =============================================
+@mixin hover($ie: false) {
+  &:focus {
+    @content;
+  }
+
+  @media (hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @if $ie {
+    @at-root .ua-ie &:hover {
+      @content;
+    }
+  }
+}
+
+// =============================================
+// [triangle 三角形の作成]
+// $direction  {String} 矢印の向き
+// $color      {String} border-color プロパティの値
+// $base       {Number} border-width プロパティの値
+// $height     {Number} border-width プロパティの値
+// $base-half  {Number} border-width プロパティの値($baseの半分の値)
+// =============================================
+@mixin triangle( $direction, $color: currentcolor, $base: 1em, $height: 1em ) {
+  $base-half: $base / 2;
+
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $direction == top {
+    border-width: 0 $base-half $height $base-half;
+    border-color: transparent transparent $color transparent;
+  }
+
+  @if $direction == bottom {
+    border-width: $height $base-half 0 $base-half;
+    border-color: $color transparent transparent transparent;
+  }
+
+  @if $direction == right {
+    border-width: $base-half 0 $base-half $height;
+    border-color: transparent transparent transparent $color;
+  }
+
+  @if $direction == left {
+    border-width: $base-half $height $base-half 0;
+    border-color: transparent $color transparent transparent;
+  }
+}
+
+// =============================================
+// [flex フレックスの指定]
+// $flex-wrap       {String} flex-wrap プロパティの値
+// $justify-content {String} justify-content プロパティの値
+// $align-items     {String} align-items プロパティの値
+// =============================================
+@mixin flex(
+  $flex-wrap: null,
+  $justify-content: null,
+  $align-items: null
+) {
+    display: flex;
+
+    @if $flex-wrap {
+      flex-wrap: $flex-wrap;
+    }
+
+    @if $justify-content {
+      justify-content: $justify-content;
+    }
+
+    @if $align-items {
+      align-items: $align-items;
+    }
+}
+
+// =============================================
+// [font フォント周りの設定]
+// $color           {String} color プロパティの値
+// $font-size       {Number} font-size プロパティの値
+// $letter-spacing  {Number} letter-spacing プロパティの値
+// $line-height     {Number} line-height プロパティの値
+// =============================================
+@mixin font(
+	$color: null,
+	$font-size: null,
+	$letter-spacing: null,
+	$line-height: null,
+  $device: null,
+) {
+	@if $color {
+		color: $color;
+	}
+
+	@if $font-size and $device {
+		font-size: pxtovw($font-size, $device);
+	}
+
+	@if $letter-spacing {
+		letter-spacing: ($letter-spacing / 1000) * 1em;
+	}
+
+	@if $line-height and $font-size {
+		line-height: ($line-height / $font-size);
+	}
+}

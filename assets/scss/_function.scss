@@ -1,0 +1,35 @@
+/* function */
+
+// ---------------------------------------------
+// px→remの計算
+// ---------------------------------------------
+@function pxtorem($value, $base: 16) {
+	@return ($value / $base) * 1rem;
+}
+
+// ---------------------------------------------
+// [pxのフォントサイズをvw単位に変換する関数]
+// @param {number} $value  - vw単位に変換するpx単位の値
+// @param {string} $device - 基準となるデバイス名
+// @return {string} vw単位の値
+// ---------------------------------------------
+@function pxtovw($value, $device) {
+	@if $device == "sp" {
+		@return ($value * 100 / $DESIGN_SP_VIEWPORT) * 1vw;
+	}
+
+	@if $device == "tablet" {
+		@return ($value * 100 / $DESIGN_TABLET_VIEWPORT) * 1vw;
+	}
+
+	@if $device == "pc" {
+		@return ($value * 100 / $DESIGN_PC_VIEWPORT) * 1vw;
+	}
+}
+
+// ---------------------------------------------
+// 三次ベジェ曲線のイージング
+// ---------------------------------------------
+@function ease($easing) {
+    @return map-get($easings, $easing);
+}
