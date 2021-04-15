@@ -57,10 +57,10 @@ export default {
   }
   .p-blog__publishedAt {
     @include responsive(xs) {
-      margin-top: pxtovw(24, sp);
+      margin-top: pxtovw(32, sp);
     }
     @include responsive(md) {
-      margin-top: pxtovw(24, tablet);
+      margin-top: pxtovw(32, tablet);
     }
   }
   .p-blog__category {
@@ -73,10 +73,10 @@ export default {
   }
   .p-blog__post {
     @include responsive(xs) {
-      margin-top: pxtovw(32, sp);
+      margin-top: pxtovw(40, sp);
     }
     @include responsive(md) {
-      margin-top: pxtovw(32, tablet);
+      margin-top: pxtovw(40, tablet);
     }
     @include responsive(xs) {
       @include font($font-size: 14, $line-height: 32, $device: sp);

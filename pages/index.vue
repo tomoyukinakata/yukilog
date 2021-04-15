@@ -62,13 +62,35 @@ export default {
         margin-top: pxtovw(40, tablet);
       }
     }
+    a {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 1px;
+        background-color: $BACKGROUND_COLOR;
+        vertical-align: middle;
+        transition: width 0.3s ease-out;
+        @include responsive(xs) {
+          margin-right: pxtovw(4, sp);
+        }
+        @include responsive(md) {
+          margin-right: pxtovw(4, tablet);
+        }
+      }
+      &:hover {
+        &::before {
+          width: 22px;
+        }
+      }
+    }
   }
   .p-blogs__link {
     @include responsive(xs) {
-      @include font($font-size: 20, $device: sp);
+      @include font($font-size: 18, $device: sp);
     }
     @include responsive(md) {
-      @include font($font-size: 20, $device: tablet);
+      @include font($font-size: 18, $device: tablet);
     }
   }
 }

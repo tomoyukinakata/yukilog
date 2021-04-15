@@ -9,7 +9,7 @@ export default class Mesh {
       u_texture: {
         type: 't',
         value: new THREE.TextureLoader().load(
-          'https://i.postimg.cc/65Tr7ksh/1920-Web-1.jpg'
+          'https://i.postimg.cc/tJh0M3jr/image.png'
         ),
       },
       u_time: { type: 'f', value: 1.0 },
@@ -28,6 +28,8 @@ export default class Mesh {
     })
 
     this.mesh = new THREE.Mesh(this.geometry, this.material)
+    this.mesh.position.x = 2
+    this.mesh.position.y = -2
     this.mesh.rotation.x = -0.25
     this.stage.scene.add(this.mesh)
   }

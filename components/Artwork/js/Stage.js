@@ -8,7 +8,7 @@ class Stage {
       near: 0.1,
       far: 10000,
       lookAt: new THREE.Vector3(0, 0, 0),
-      x: 0,
+      x: 5,
       y: 0,
       z: 10,
     }
@@ -36,7 +36,7 @@ class Stage {
       antialias: true,
       alpha: true,
     })
-    this.renderer.setClearColor(new THREE.Color(0xd0d0d0))
+    this.renderer.setClearColor(new THREE.Color(0xf5f5f5))
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(this.size.windowW, this.size.windowH)
     this._setCamera()

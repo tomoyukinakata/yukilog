@@ -3,6 +3,7 @@
     <layout-header />
     <Nuxt />
     <layout-footer />
+    <my-cursor />
     <div class="p-noise"></div>
     <Artwork />
   </layout-wrapper>
