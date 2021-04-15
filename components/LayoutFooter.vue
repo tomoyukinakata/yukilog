@@ -23,8 +23,8 @@ export default {
     align-items: center;
     height: 100%;
     @include responsive(xs) {
-      padding-right: pxtovw(16, sp);
-      padding-left: pxtovw(16, sp);
+      padding-right: pxtovw(24, sp);
+      padding-left: pxtovw(24, sp);
     }
     @include responsive(md) {
       padding-right: pxtovw(40, tablet);

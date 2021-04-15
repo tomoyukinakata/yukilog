@@ -1,14 +1,14 @@
 <template>
   <layout-main>
-    <div class="p-blog">
-      <div class="p-blog__inner">
-        <ul class="p-blog__list">
+    <div class="p-blogs">
+      <div class="p-blogs__inner">
+        <ul class="p-blogs__list">
           <li
             v-for="content in contents"
             :key="content.id"
-            class="p-blog__item"
+            class="p-blogs__item"
           >
-            <nuxt-link :to="`/${content.id}`" class="p-blog__link">
+            <nuxt-link :to="`/${content.id}`" class="p-blogs__link">
               {{ content.title }}
             </nuxt-link>
           </li>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p-blog {
+.p-blogs {
   @include responsive(xs) {
     padding-top: pxtovw(16, sp);
     padding-bottom: pxtovw(16, sp);
@@ -43,17 +43,17 @@ export default {
     padding-top: pxtovw(40, tablet);
     padding-bottom: pxtovw(40, tablet);
   }
-  .p-blog__inner {
+  .p-blogs__inner {
     @include responsive(xs) {
-      padding-right: pxtovw(16, sp);
-      padding-left: pxtovw(16, sp);
+      padding-right: pxtovw(24, sp);
+      padding-left: pxtovw(24, sp);
     }
     @include responsive(md) {
       padding-right: pxtovw(40, tablet);
       padding-left: pxtovw(40, tablet);
     }
   }
-  .p-blog__item {
+  .p-blogs__item {
     &:not(:first-child) {
       @include responsive(xs) {
         margin-top: pxtovw(16, sp);
@@ -63,12 +63,12 @@ export default {
       }
     }
   }
-  .p-blog__link {
+  .p-blogs__link {
     @include responsive(xs) {
-      @include font($font-size: 14, $device: sp);
+      @include font($font-size: 20, $device: sp);
     }
     @include responsive(md) {
-      @include font($font-size: 14, $device: tablet);
+      @include font($font-size: 20, $device: tablet);
     }
   }
 }

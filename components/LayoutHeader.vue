@@ -23,7 +23,12 @@ export default {
 
 <style lang="scss" scoped>
 .l-header {
-  height: 120px;
+  @include responsive(xs) {
+    height: 104px;
+  }
+  @include responsive(md) {
+    height: 160px;
+  }
 
   .l-header__inner {
     display: flex;
@@ -31,8 +36,8 @@ export default {
     align-items: center;
     height: 100%;
     @include responsive(xs) {
-      padding-right: pxtovw(16, sp);
-      padding-left: pxtovw(16, sp);
+      padding-right: pxtovw(24, sp);
+      padding-left: pxtovw(24, sp);
     }
     @include responsive(md) {
       padding-right: pxtovw(40, tablet);
@@ -59,10 +64,10 @@ export default {
   .l-header__item {
     a {
       @include responsive(xs) {
-        @include font($font-size: 16, $device: sp);
+        @include font($font-size: 14, $device: sp);
       }
       @include responsive(md) {
-        @include font($font-size: 16, $device: tablet);
+        @include font($font-size: 14, $device: tablet);
       }
     }
   }
