@@ -7,7 +7,7 @@
       <nav class="l-header__nav">
         <ul class="l-header__list">
           <li class="l-header__item">
-            <nuxt-link to="/">about</nuxt-link>
+            <nuxt-link to="/about">about</nuxt-link>
           </li>
         </ul>
       </nav>

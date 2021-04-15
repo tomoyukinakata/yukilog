@@ -4,6 +4,7 @@
     <Nuxt />
     <layout-footer />
     <div class="p-noise"></div>
+    <Artwork />
   </layout-wrapper>
 </template>
 
