@@ -58,7 +58,7 @@ export default {
   .p-blogs__item {
     &:not(:first-child) {
       @include responsive(xs) {
-        margin-top: pxtovw(16, sp);
+        margin-top: pxtovw(40, sp);
       }
       @include responsive(md) {
         margin-top: pxtovw(40, tablet);

@@ -20,11 +20,11 @@ export default {
     })
 
     for (let i = 0; i < link.length; i++) {
-      link[i].addEventListener('mouseenter', (e) => {
+      link[i].addEventListener('mouseenter', () => {
         cursor.classList.add('is-active')
       })
 
-      link[i].addEventListener('mouseleave', (e) => {
+      link[i].addEventListener('mouseleave', () => {
         cursor.classList.remove('is-active')
       })
     }
