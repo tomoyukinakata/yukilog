@@ -28,6 +28,7 @@
     padding-top: pxtovw(40, tablet);
     padding-bottom: pxtovw(40, tablet);
   }
+
   .p-about__inner {
     @include responsive(xs) {
       padding-right: pxtovw(24, sp);
@@ -38,6 +39,7 @@
       padding-left: pxtovw(40, tablet);
     }
   }
+
   .p-about__title {
     @include responsive(xs) {
       @include font($font-size: 24, $device: sp);
@@ -46,6 +48,7 @@
       @include font($font-size: 24, $device: tablet);
     }
   }
+
   .p-about__text {
     @include responsive(xs) {
       margin-top: pxtovw(32, sp);

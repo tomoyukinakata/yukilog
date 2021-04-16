@@ -1,34 +1,31 @@
 <template>
   <layout-wrapper>
     <layout-header />
-    <Nuxt />
+    <transition name="page">
+      <Nuxt />
+    </transition>
     <layout-footer />
     <my-cursor />
-    <div class="p-noise"></div>
+    <my-noise />
     <Artwork />
   </layout-wrapper>
 </template>
 
+<script>
+export default {
+  pageTransition: 'page',
+}
+</script>
+
 <style lang="scss" scoped>
-.p-noise {
-  opacity: 0.4;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('@/assets/image/bg_noise.png');
-  pointer-events: none;
-  animation: noise 0.4s steps(8) infinite;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-@keyframes noise {
-  0% {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 128px 128px;
-  }
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
 }
 </style>

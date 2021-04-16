@@ -21,6 +21,7 @@ export default {
   methods: {},
 }
 </script>
+
 <style>
 .artwork {
   position: fixed;

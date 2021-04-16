@@ -3,7 +3,9 @@
     <div class="p-blog">
       <div class="p-blog__inner">
         <h1 class="p-blog__title">{{ title }}</h1>
-        <p class="p-blog__publishedAt">{{ publishedAt }}</p>
+        <p class="p-blog__publishedAt">
+          {{ new Date(publishedAt).toLocaleDateString() }}
+        </p>
         <p class="p-blog__category">{{ category && category.name }}</p>
         <div class="p-blog__post" v-html="body"></div>
       </div>
@@ -37,6 +39,7 @@ export default {
     padding-top: pxtovw(40, tablet);
     padding-bottom: pxtovw(40, tablet);
   }
+
   .p-blog__inner {
     @include responsive(xs) {
       padding-right: pxtovw(24, sp);
@@ -47,6 +50,7 @@ export default {
       padding-left: pxtovw(40, tablet);
     }
   }
+
   .p-blog__title {
     @include responsive(xs) {
       @include font($font-size: 24, $device: sp);
@@ -55,6 +59,7 @@ export default {
       @include font($font-size: 24, $device: tablet);
     }
   }
+
   .p-blog__publishedAt {
     @include responsive(xs) {
       margin-top: pxtovw(32, sp);
@@ -63,6 +68,7 @@ export default {
       margin-top: pxtovw(32, tablet);
     }
   }
+
   .p-blog__category {
     @include responsive(xs) {
       margin-top: pxtovw(24, sp);
@@ -71,6 +77,7 @@ export default {
       margin-top: pxtovw(24, tablet);
     }
   }
+
   .p-blog__post {
     @include responsive(xs) {
       margin-top: pxtovw(40, sp);

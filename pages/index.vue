@@ -43,6 +43,7 @@ export default {
     padding-top: pxtovw(40, tablet);
     padding-bottom: pxtovw(40, tablet);
   }
+
   .p-blogs__inner {
     @include responsive(xs) {
       padding-right: pxtovw(24, sp);
@@ -53,6 +54,7 @@ export default {
       padding-left: pxtovw(40, tablet);
     }
   }
+
   .p-blogs__item {
     &:not(:first-child) {
       @include responsive(xs) {
@@ -70,7 +72,7 @@ export default {
         height: 1px;
         background-color: $BACKGROUND_COLOR;
         vertical-align: middle;
-        transition: width 0.3s ease-out;
+        transition: width 0.4s ease-out;
         @include responsive(xs) {
           margin-right: pxtovw(4, sp);
         }
@@ -85,6 +87,7 @@ export default {
       }
     }
   }
+
   .p-blogs__link {
     @include responsive(xs) {
       @include font($font-size: 18, $device: sp);

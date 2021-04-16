@@ -1,8 +1,5 @@
 <template>
-  <div class="p-cursor">
-    <div class="p-cursor__pointer js-cursor__pointer"></div>
-    <div class="p-cursor__follow js-cursor__follow"></div>
-  </div>
+  <div class="p-cursor js-cursor"></div>
 </template>
 
 <script>
@@ -10,18 +7,27 @@ export default {
   name: 'MyCursor',
   data() {
     return {
-      cursorFollowActiveBuffer: 16,
       cursorPosX: 0,
       cursorPosY: 0,
     }
   },
   mounted() {
-    const cursorPointer = document.querySelector('.js-cursor__pointer')
-    const cursorFollow = document.querySelector('.js-cursor__follow')
+    const cursor = document.querySelector('.js-cursor')
+    const link = document.querySelectorAll('a')
+
     window.addEventListener('mousemove', (e) => {
-      this.mouseMoveCursor(cursorPointer, e, 1.0)
-      this.mouseMoveCursor(cursorFollow, e, 1.0)
+      this.mouseMoveCursor(cursor, e, 1.0)
     })
+
+    for (let i = 0; i < link.length; i++) {
+      link[i].addEventListener('mouseenter', (e) => {
+        cursor.classList.add('is-active')
+      })
+
+      link[i].addEventListener('mouseleave', (e) => {
+        cursor.classList.remove('is-active')
+      })
+    }
   },
   methods: {
     mouseMoveCursor(element, event, friction) {
@@ -39,32 +45,16 @@ export default {
 .p-cursor {
   @include responsive(md) {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: rgba($BACKGROUND_COLOR, 0.8);
     pointer-events: none;
-  }
-  .p-cursor__pointer,
-  .p-cursor__follow {
-    @include responsive(md) {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-    }
-  }
-  .p-cursor__pointer {
-    @include responsive(md) {
-      border-radius: 100%;
-      background-color: $BACKGROUND_COLOR;
-    }
-  }
-  .p-cursor__follow {
-    @include responsive(md) {
-      padding: 32px;
-      border: 1px solid $BORDER_COLOR_2;
-      transition: all 0.2s ease-out;
-      border-radius: 100%;
+    transition: transform 0.4s ease-out, width 0.4s ease-out,
+      height 0.4s ease-out;
+    &.is-active {
+      width: 64px;
+      height: 64px;
     }
   }
 }
