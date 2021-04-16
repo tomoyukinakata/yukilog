@@ -12,20 +12,20 @@ export default {
     }
   },
   mounted() {
-    const cursor = document.querySelector('.js-cursor')
-    const link = document.querySelectorAll('a')
+    this.cursor = document.querySelector('.js-cursor')
+    this.link = document.querySelectorAll('a')
 
     window.addEventListener('mousemove', (e) => {
-      this.mouseMoveCursor(cursor, e, 1.0)
+      this.mouseMoveCursor(this.cursor, e, 1.0)
     })
 
-    for (let i = 0; i < link.length; i++) {
-      link[i].addEventListener('mouseenter', () => {
-        cursor.classList.add('is-active')
+    for (let i = 0; i < this.link.length; i++) {
+      this.link[i].addEventListener('mouseenter', () => {
+        this.mouseEnter()
       })
 
-      link[i].addEventListener('mouseleave', () => {
-        cursor.classList.remove('is-active')
+      this.link[i].addEventListener('mouseleave', () => {
+        this.mouseLeave()
       })
     }
   },
@@ -36,6 +36,12 @@ export default {
       element.style.transform = `translate(${
         this.cursorPosX - element.clientWidth / 2
       }px,${this.cursorPosY - element.clientHeight / 2}px)`
+    },
+    mouseEnter() {
+      this.cursor.classList.add('is-active')
+    },
+    mouseLeave() {
+      this.cursor.classList.remove('is-active')
     },
   },
 }
