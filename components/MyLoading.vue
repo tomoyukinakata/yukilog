@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { TimelineMax, Power4, Expo } from 'gsap'
+import gsap from 'gsap'
 
 export default {
   name: 'MyLoading',
@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     openingAnimation() {
-      const tl = new TimelineMax()
+      const tl = gsap.timeline()
       const loading = document.querySelector('.js-top-loading')
 
       if (sessionStorage.getItem('visited')) {
@@ -33,18 +33,18 @@ export default {
           },
           {
             y: '0%',
-            ease: Power4.easeOut,
+            ease: 'Power4.easeOut',
           }
         )
           .to('.js-top-loading__logo .js-top-loading__logo-inner', 1.0, {
             y: '-100%',
-            ease: Expo.easeIn,
+            ease: 'Expo.easeIn',
             delay: 0.6,
           })
           .to('.js-top-loading', 1.0, {
             scaleY: 0,
             transformOrigin: '50% 0%',
-            ease: Power4.easeOut,
+            ease: 'Power4.easeOut',
           })
         sessionStorage.setItem('visited', 1)
       }
