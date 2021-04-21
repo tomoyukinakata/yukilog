@@ -17,6 +17,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
     "fibers": "^5.0.0",
+    "gsap": "^3.6.1",
     "nuxt": "^2.15.3",
     "nuxt-webfontloader": "^1.1.0",
     "raw-loader": "^4.0.2",

@@ -5,6 +5,7 @@
       <Nuxt />
     </transition>
     <layout-footer />
+    <my-loading />
     <my-cursor />
     <my-noise />
     <Artwork />
@@ -12,7 +13,9 @@
 </template>
 
 <script>
+import MyLoading from '../components/MyLoading.vue'
 export default {
+  components: { MyLoading },
   pageTransition: 'page',
 }
 </script>
