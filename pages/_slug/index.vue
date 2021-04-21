@@ -1,8 +1,8 @@
 <template>
   <layout-main>
-    <div class="p-blog">
+    <div class="p-blog l-spacer">
       <div class="p-blog__inner">
-        <h1 class="p-blog__title">{{ title }}</h1>
+        <base-heading>{{ title }}</base-heading>
         <p class="p-blog__publishedAt">
           {{ new Date(publishedAt).toLocaleDateString() }}
         </p>
@@ -30,67 +30,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p-blog {
-  @include responsive(xs) {
-    padding-top: pxtovw(16, sp);
-    padding-bottom: pxtovw(16, sp);
-  }
-  @include responsive(md) {
-    padding-top: pxtovw(40, tablet);
-    padding-bottom: pxtovw(40, tablet);
-  }
+.l-spacer {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
 
+.p-blog {
   .p-blog__inner {
     @include responsive(xs) {
-      padding-right: pxtovw(24, sp);
-      padding-left: pxtovw(24, sp);
+      padding-right: 40px;
+      padding-left: 40px;
     }
     @include responsive(md) {
-      padding-right: pxtovw(40, tablet);
-      padding-left: pxtovw(40, tablet);
+      padding-right: 80px;
+      padding-left: 80px;
     }
   }
 
   .p-blog__title {
-    @include responsive(xs) {
-      @include font($font-size: 24, $device: sp);
-    }
-    @include responsive(md) {
-      @include font($font-size: 24, $device: tablet);
-    }
+    padding-top: 24px;
+    @include font($font-size: 24, $line-height: 32);
   }
 
   .p-blog__publishedAt {
-    @include responsive(xs) {
-      margin-top: pxtovw(32, sp);
-    }
-    @include responsive(md) {
-      margin-top: pxtovw(32, tablet);
-    }
+    margin-top: 24px;
+    @include font($font-size: 16);
   }
 
   .p-blog__category {
-    @include responsive(xs) {
-      margin-top: pxtovw(24, sp);
-    }
-    @include responsive(md) {
-      margin-top: pxtovw(24, tablet);
-    }
+    margin-top: 24px;
+    @include font($font-size: 16);
   }
 
   .p-blog__post {
-    @include responsive(xs) {
-      margin-top: pxtovw(40, sp);
-    }
-    @include responsive(md) {
-      margin-top: pxtovw(40, tablet);
-    }
-    @include responsive(xs) {
-      @include font($font-size: 14, $line-height: 32, $device: sp);
-    }
-    @include responsive(md) {
-      @include font($font-size: 14, $line-height: 32, $device: tablet);
-    }
+    margin-top: 40px;
+    @include font($font-size: 14, $line-height: 32);
   }
 }
 </style>

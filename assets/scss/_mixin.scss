@@ -108,14 +108,13 @@
 	$font-size: null,
 	$letter-spacing: null,
 	$line-height: null,
-  $device: null,
 ) {
 	@if $color {
 		color: $color;
 	}
 
-	@if $font-size and $device {
-		font-size: pxtovw($font-size, $device);
+	@if $font-size {
+		font-size: pxtorem($font-size);
 	}
 
 	@if $letter-spacing {

@@ -72,7 +72,7 @@ export default {
 
   webfontloader: {
     google: {
-      families: ['Playfair+Display+SC:400,700'],
+      families: ['Vollkorn:400;500;600;700'],
     },
   },
 

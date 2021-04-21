@@ -14,8 +14,13 @@ export default {
 
 <style lang="scss" scoped>
 .l-footer {
-  height: 80px;
   color: $TEXT_COLOR_2;
+  @include responsive(xs) {
+    height: 49.5px;
+  }
+  @include responsive(md) {
+    height: 99px;
+  }
 
   .l-footer__inner {
     display: flex;
@@ -23,22 +28,17 @@ export default {
     align-items: center;
     height: 100%;
     @include responsive(xs) {
-      padding-right: pxtovw(24, sp);
-      padding-left: pxtovw(24, sp);
+      padding-right: 40px;
+      padding-left: 40px;
     }
     @include responsive(md) {
-      padding-right: pxtovw(40, tablet);
-      padding-left: pxtovw(40, tablet);
+      padding-right: 80px;
+      padding-left: 80px;
     }
   }
 
   .l-footer__copyright {
-    @include responsive(xs) {
-      @include font($font-size: 10, $device: sp);
-    }
-    @include responsive(md) {
-      @include font($font-size: 10, $device: tablet);
-    }
+    @include font($font-size: 14);
   }
 }
 </style>

@@ -13,21 +13,21 @@ export default {
   },
   mounted() {
     this.cursor = document.querySelector('.js-cursor')
-    this.link = document.querySelectorAll('a')
+    // this.link = document.querySelectorAll('a')
 
     window.addEventListener('mousemove', (e) => {
       this.mouseMoveCursor(this.cursor, e, 1.0)
     })
 
-    for (let i = 0; i < this.link.length; i++) {
-      this.link[i].addEventListener('mouseenter', () => {
-        this.mouseEnter()
-      })
+    // for (let i = 0; i < this.link.length; i++) {
+    //   this.link[i].addEventListener('mouseenter', () => {
+    //     this.mouseEnter()
+    //   })
 
-      this.link[i].addEventListener('mouseleave', () => {
-        this.mouseLeave()
-      })
-    }
+    //   this.link[i].addEventListener('mouseleave', () => {
+    //     this.mouseLeave()
+    //   })
+    // }
   },
   methods: {
     mouseMoveCursor(element, event, friction) {
@@ -37,12 +37,12 @@ export default {
         this.cursorPosX - element.clientWidth / 2
       }px,${this.cursorPosY - element.clientHeight / 2}px)`
     },
-    mouseEnter() {
-      this.cursor.classList.add('is-active')
-    },
-    mouseLeave() {
-      this.cursor.classList.remove('is-active')
-    },
+    // mouseEnter() {
+    //   this.cursor.classList.add('is-active')
+    // },
+    // mouseLeave() {
+    //   this.cursor.classList.remove('is-active')
+    // },
   },
 }
 </script>
@@ -51,17 +51,17 @@ export default {
 .p-cursor {
   @include responsive(md) {
     position: fixed;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
     background-color: rgba($BACKGROUND_COLOR, 0.8);
     pointer-events: none;
     transition: transform 0.4s ease-out, width 0.4s ease-out,
       height 0.4s ease-out;
-    &.is-active {
-      width: 64px;
-      height: 64px;
-    }
+    // &.is-active {
+    //   width: 64px;
+    //   height: 64px;
+    // }
   }
 }
 </style>

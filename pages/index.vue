@@ -1,6 +1,6 @@
 <template>
   <layout-main>
-    <div class="p-blogs">
+    <div class="p-blogs l-spacer">
       <div class="p-blogs__inner">
         <ul class="p-blogs__list">
           <li
@@ -34,66 +34,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p-blogs {
+.l-spacer {
   @include responsive(xs) {
-    padding-top: pxtovw(16, sp);
-    padding-bottom: pxtovw(16, sp);
+    padding-top: 72px;
+    padding-bottom: 72px;
   }
-  @include responsive(md) {
-    padding-top: pxtovw(40, tablet);
-    padding-bottom: pxtovw(40, tablet);
-  }
+}
 
+.p-blogs {
   .p-blogs__inner {
     @include responsive(xs) {
-      padding-right: pxtovw(24, sp);
-      padding-left: pxtovw(24, sp);
+      padding-right: 40px;
+      padding-left: 40px;
     }
     @include responsive(md) {
-      padding-right: pxtovw(40, tablet);
-      padding-left: pxtovw(40, tablet);
-    }
-  }
-
-  .p-blogs__item {
-    &:not(:first-child) {
-      @include responsive(xs) {
-        margin-top: pxtovw(40, sp);
-      }
-      @include responsive(md) {
-        margin-top: pxtovw(40, tablet);
-      }
-    }
-    a {
-      &::before {
-        content: '';
-        display: inline-block;
-        width: 12px;
-        height: 1px;
-        background-color: $BACKGROUND_COLOR;
-        vertical-align: middle;
-        transition: width 0.4s ease-out;
-        @include responsive(xs) {
-          margin-right: pxtovw(4, sp);
-        }
-        @include responsive(md) {
-          margin-right: pxtovw(4, tablet);
-        }
-      }
-      &:hover {
-        &::before {
-          width: 22px;
-        }
-      }
+      padding-right: 80px;
+      padding-left: 80px;
     }
   }
 
   .p-blogs__link {
+    display: inline-block;
+    padding-left: 1.3em;
+    text-indent: -1.3em;
+    @include font($font-size: 20, $line-height: 28);
     @include responsive(xs) {
-      @include font($font-size: 18, $device: sp);
+      padding-top: 16px;
+      padding-bottom: 16px;
     }
     @include responsive(md) {
-      @include font($font-size: 18, $device: tablet);
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 1px;
+      background-color: $BACKGROUND_COLOR;
+      vertical-align: super;
+      transition: width 0.4s ease-out;
+      @include responsive(xs) {
+        margin-right: 8px;
+      }
+    }
+    &:hover {
+      &::before {
+        width: 22px;
+      }
     }
   }
 }
