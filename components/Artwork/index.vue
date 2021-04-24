@@ -1,7 +1,7 @@
 <template>
-  <section class="artwork">
+  <div class="artwork">
     <canvas ref="canvas" class="artwork__canvas"></canvas>
-  </section>
+  </div>
 </template>
 
 <script>

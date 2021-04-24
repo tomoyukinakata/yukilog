@@ -61,14 +61,16 @@ export default {
         position: absolute;
         bottom: -6px;
         left: 0;
-        width: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        width: 100%;
         height: 1px;
         background-color: $BACKGROUND_COLOR;
-        transition: width 0.4s ease-out;
+        transition: transform 0.4s ease-out;
       }
       &:hover {
         &::after {
-          width: 100%;
+          transform: scaleX(1);
         }
       }
     }
