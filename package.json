@@ -10,12 +10,9 @@
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "functions:build": "netlify-lambda build functions/",
-    "functions:serve": "netlify-lambda serve functions/"
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "axios": "^0.21.1",
     "core-js": "^3.9.1",
@@ -39,7 +36,6 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
-    "netlify-lambda": "^2.0.4",
     "prettier": "^2.2.1",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",

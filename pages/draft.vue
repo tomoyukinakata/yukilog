@@ -26,7 +26,10 @@ export default {
       return;
     }
     const { data } = await axios.get(
-      `/.netlify/functions/draft?id=${query.id}&draftKey=${query.draftKey}`,
+      `https://yukilog.microcms.io/api/v1/blog/${query.id}?draftKey=${query.draftKey}`,
+      {
+        headers: { 'X-API-KEY': '19ddd70a-0f27-4dca-a4f4-96f250654688' }
+      }
     );
     this.data = data;
   },
