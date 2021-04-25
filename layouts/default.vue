@@ -14,6 +14,7 @@
 
 <script>
 import MyLoading from '../components/MyLoading.vue'
+
 export default {
   components: { MyLoading },
   pageTransition: 'page',

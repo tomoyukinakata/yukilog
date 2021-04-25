@@ -2,7 +2,7 @@
   <div class="p-top-loading js-top-loading">
     <div class="p-top-loading__logo js-top-loading__logo">
       <span class="p-top-loading__logo-inner js-top-loading__logo-inner"
-        ><img src="https://i.postimg.cc/tJh0M3jr/image.png" alt=""
+        ><img src="@/assets/image/img_portrait.png" alt=""
       /></span>
     </div>
   </div>
