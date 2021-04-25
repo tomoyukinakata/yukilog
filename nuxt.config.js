@@ -78,17 +78,31 @@ export default {
 
   generate: {
     async routes() {
+      const limit = 10
+      const range = (start, end) =>
+        [...Array(end - start + 1)].map((_, i) => start + i)
+
+      // 一覧のページング
       const pages = await axios
-        .get('https://yukilog.microcms.io/api/v1/blog?limit=100', {
+        .get(`https://yukilog.microcms.io/api/v1/blog?limit=0`, {
           headers: { 'X-API-KEY': '19ddd70a-0f27-4dca-a4f4-96f250654688' },
         })
         .then((res) =>
-          res.data.contents.map((content) => ({
-            route: `/${content.id}`,
-            payload: content,
+          range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
+            route: `/page/${p}`,
           }))
         )
       return pages
+    },
+  },
+
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/page/:p',
+        component: resolve(__dirname, 'pages/index.vue'),
+        name: 'page',
+      })
     },
   },
 }
