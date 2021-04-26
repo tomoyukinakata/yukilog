@@ -17,7 +17,7 @@
 import axios from 'axios'
 
 export default {
-  async asyncData({ params }) {
+  async asyncData({ params,$config }) {
     const { data } = await axios.get(
       `https://yukilog.microcms.io/api/v1/blog/${params.slug}`,
       {
