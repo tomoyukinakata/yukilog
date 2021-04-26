@@ -2,8 +2,6 @@ import sass from 'sass'
 import fiber from 'fibers'
 import axios from 'axios'
 
-const { API_KEY } = process.env;
-
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -92,12 +90,5 @@ export default {
         )
       return pages
     },
-  },
-
-  privateRuntimeConfig: {
-    apiKey: API_KEY
-  },
-  publicRuntimeConfig: {
-    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
   },
 }
