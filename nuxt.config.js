@@ -1,6 +1,3 @@
-require('dotenv').config();
-const { API_KEY } = process.env;
-
 import sass from 'sass'
 import fiber from 'fibers'
 import axios from 'axios'
@@ -94,11 +91,4 @@ export default {
       return pages
     },
   },
-
-  privateRuntimeConfig: {
-    apiKey: API_KEY
-  },
-  publicRuntimeConfig: {
-    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
-  }
 }
