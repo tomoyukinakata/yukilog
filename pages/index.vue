@@ -22,18 +22,15 @@
 import axios from 'axios'
 
 export default {
-  async asyncData({ $config }) {
+  async asyncData() {
     const { data } = await axios.get(
       'https://yukilog.microcms.io/api/v1/blog',
       {
-        headers: { 'X-API-KEY': $config.apiKey },
+        headers: { 'X-API-KEY': '19ddd70a-0f27-4dca-a4f4-96f250654688' },
       }
     )
     return data
   },
-  mounted() {
-    console.log(process.env.API_KEY);
-  }
 }
 </script>
 
