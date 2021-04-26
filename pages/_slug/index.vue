@@ -21,7 +21,7 @@ export default {
     const { data } = await axios.get(
       `https://yukilog.microcms.io/api/v1/blog/${params.slug}`,
       {
-        headers: { 'X-API-KEY': '19ddd70a-0f27-4dca-a4f4-96f250654688' },
+        headers: { 'X-API-KEY': $config.apiKey },
       }
     )
     return data
