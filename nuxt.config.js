@@ -48,7 +48,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxtjs/proxy',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -95,6 +96,10 @@ export default {
         )
       return pages
     },
+  },
+
+  proxy: {
+    '/.netlify': 'http://localhost:9000'
   },
 
   privateRuntimeConfig: {
