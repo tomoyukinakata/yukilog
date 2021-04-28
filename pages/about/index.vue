@@ -2,7 +2,7 @@
   <layout-main>
     <div class="p-about l-spacer">
       <div class="p-about__inner">
-        <base-heading>about</base-heading>
+        <base-heading uppercase="c-heading--uppercase">about</base-heading>
         <p class="p-about__text">
           フロントエンドエンジニアのゆきです。<br />
           現在は原宿にある高校でJKをやっています。<br />
