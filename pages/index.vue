@@ -56,16 +56,17 @@ export default {
 
   .p-blogs__link {
     display: inline-block;
-    padding-left: 1.3em;
-    text-indent: -1.3em;
-    @include font($font-size: 20, $line-height: 28);
+    padding-left: 1.5em;
+    text-indent: -1.5em;
     @include responsive(xs) {
       padding-top: 16px;
       padding-bottom: 16px;
+      @include font($font-size: 16, $line-height: 24);
     }
     @include responsive(md) {
       padding-top: 24px;
       padding-bottom: 24px;
+      @include font($font-size: 20, $line-height: 28);
     }
     &::before {
       content: '';
